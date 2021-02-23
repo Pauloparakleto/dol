@@ -1,11 +1,15 @@
 %h1 All Users
-%table
-    %tr
-        %th name
-        %th e-mail
-    %tr 
-        - @users.each do | user |
-            %td
-                = user.name
-            %td
-                = user.email
+- @index = 0
+%table.table.table-hover
+    %thead
+        %tr
+            %th{scope: "col"} #
+            %th{scope: "col"} name
+            %th{scope: "col"} e-mail
+    %tbody
+    - @users.each do | user |
+    - @index += 1 
+        %tr
+            %th{scope: "row"}= @index
+            %td= user.name
+            %td= user.email

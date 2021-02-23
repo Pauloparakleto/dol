@@ -10,12 +10,20 @@
           %span.sr-only (current)
       %li.nav-item
         %a.nav-link{href: "#"} Link
-      %li.nav-item.dropdown
-        %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", href: "#", role: "button"}
-          Login...
-        .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
-          %a.dropdown-item{href: "#"} como leitor
-          %a.dropdown-item{href: new_user_session_path} como administrador
+      - if current_user
+        %li.nav-item
+        %a.nav-link{href: "#"} Admin area
+      - if current_user
+        %li.nav-item
+        %a.nav-link
+          = link_to('Logout', destroy_user_session_path)
+      - else
+        %li.nav-item.dropdown
+          %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", href: "#", role: "button"}
+            Login...
+          .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
+            %a.dropdown-item{href: "#"} como leitor
+            %a.dropdown-item{href: new_user_session_path} como administrador
       %li.nav-item
         %a.nav-link.disabled{href: "#"} Disabled
     %form.form-inline.my-2.my-lg-0
