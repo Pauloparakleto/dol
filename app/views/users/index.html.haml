@@ -6,10 +6,14 @@
             %th{scope: "col"} #
             %th{scope: "col"} name
             %th{scope: "col"} e-mail
+            %th{scope: "col"} Admin?
+            %th{scope: "col"} Banished?
     %tbody
     - @users.each do | user |
     - @index += 1 
         %tr
             %th{scope: "row"}= @index
-            %td= user.name
+            %td= my_link_to user.name, users_path(user)
             %td= user.email
+            %td= user.admin?
+            %td= user.banished?
