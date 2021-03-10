@@ -15,7 +15,8 @@
                 %td= user.admin?
                 %td= user.banished?
                 %td
-                    %button.btn-outline-danger.my-2.my-sm-0= my_link_to "Banish!", "#"
+                    %button.btn-outline-danger.my-2.my-sm-0
+                        = my_link_to "Banish!", users_path(@user)
             
 %td= my_link_to "All users", users_path
             
