@@ -1,4 +1,21 @@
-%h1= @user.name
-%h2= @user.email
-%h2= @user.admin
-%h2= @user.banished
+%h1 
+    = @user.name
+%section.card
+    %table.table.table-hover
+        %thead
+            %tr
+                %th{scope: "col"} e-mail
+                %th{scope: "col"} Admin?
+                %th{scope: "col"} Banished?
+                %th{scope: "col"} Banish user 
+        %tbody
+        - [@user].each do | user |
+            %tr
+                %td= user.email
+                %td= user.admin?
+                %td= user.banished?
+                %td
+                    %button.btn-outline-danger.my-2.my-sm-0= my_link_to "Banish!", "#"
+            
+%td= my_link_to "All users", users_path
+            
