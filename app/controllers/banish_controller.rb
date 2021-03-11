@@ -1,5 +1,9 @@
 class BanishController < ApplicationController
-    def banish
+  
+  def banished_way
+  end  
+
+  def banish
         @user = User.find(params[:id])
         @user.banished = true
        if current_user.admin? && @user.save
@@ -10,6 +14,7 @@ class BanishController < ApplicationController
         redirect_to users_path
        end
     end
+
 
     private
 
