@@ -15,8 +15,9 @@
                 %td= user.admin?
                 %td= user.banished?
                 %td
-                    %button.btn-outline-danger.my-2.my-sm-0
-                        = my_link_to "Banish!", users_path(@user)
+                    = form_with(url: banish_path, method: "post") do |f|
+                        = f.hidden_field :user => {:user => {:id => user.id, :banished => true}}
+                        = f.submit "Banish"
             
 %td= my_link_to "All users", users_path
             
