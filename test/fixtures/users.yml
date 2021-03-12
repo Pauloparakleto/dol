@@ -20,11 +20,17 @@ two:
   name: Paulo Rafael
   email: paulo.rafael.silva@gmail.com
   admin: false
-  banished: 0
+  banished: false
 
 thre:
   name: Louis Souza
   email: louis.camoes.souza@gmail.com
   admin: false
-  banished: 1
+  banished: true
+
+four:
+  name: Kaiba
+  email: kaiba@gmail.com
+  admin: false
+  banished: true
 
