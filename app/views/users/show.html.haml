@@ -17,7 +17,10 @@
                 %td
                     = form_with(url: banish_path, method: "post") do |f|
                         = f.hidden_field :user => {:user => {:id => user.id, :banished => true}}
-                        = f.submit "Banish"
+                        - if !user.banished?
+                            = f.submit "Banish"
+                        - else
+                            = f.submit "Reborn"
             
 %td= my_link_to "All users", users_path
             
