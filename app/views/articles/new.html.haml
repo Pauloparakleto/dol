@@ -1,0 +1,13 @@
+%section.container
+    %main.container
+        %h1 New Article
+        = form_with model: @article, url: articles_path do |f|
+            %div.form-group
+                = f.label :title
+                = f.text_field :title, class: "form-control"
+            %div.form-group
+                = f.label :sub_title, "Subtitle"
+                = f.text_field :sub_title, class: "form-control"
+            %div.form-group
+                = f.text_area :content, class: "form-control"
+            = f.submit
