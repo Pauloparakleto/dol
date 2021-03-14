@@ -1,0 +1,17 @@
+%h1 Articles
+- @index = 0
+%table.table.table-hover
+    %thead
+        %tr
+            %th{scope: "col"} #
+            %th{scope: "col"} title
+            %th{scope: "col"} sub title
+            %th{scope: "col"} content
+    %tbody
+    - @articles.each do | article |
+    - @index += 1 
+        %tr
+            %th{scope: "row"}= @index
+            %td= my_link_to article.title, articles_path(article)
+            %td= article.sub_title
+            %td= article.content
