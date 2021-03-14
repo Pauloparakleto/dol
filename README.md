@@ -16,7 +16,7 @@ com as seguintes especificações:
 
 ● Área Administrativa
 
-○ CRUD de Notícias
+○ CRUD de Notícias (Work in progress)
 
 ○ CRUD de Vídeos
 
